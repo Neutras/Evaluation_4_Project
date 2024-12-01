@@ -10,7 +10,7 @@ Este proyecto implementa un sistema basado en Deep Learning para verificar la le
 - **Integración Completa**: Pipeline que une detección y reconocimiento.
 
 ## Requisitos
-- Python 3.8+
+- Python 3.9+
 - Librerías listadas en `requirements.txt`.
 
 ## Estructura del Proyecto
