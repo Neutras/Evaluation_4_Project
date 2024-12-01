@@ -1,0 +1,34 @@
+
+model:
+  cnn:
+    input_shape: [128, 128, 3]  # Input shape for images
+    filters: [32, 64, 128]      # Filters for each convolutional layer
+    kernel_size: [3, 3]         # Kernel size for convolution
+    activation: 'relu'          # Activation function
+    dense_units: 128            # Number of units in dense layer
+    output_activation: 'sigmoid'# Output activation function for binary classification
+
+  ocr:
+    lstm_units: 128             # Number of LSTM units for OCR
+    embedding_dim: 64           # Dimension of the embedding layer
+    vocab_size: 100             # Vocabulary size for OCR model
+    output_activation: 'softmax'# Output activation for OCR
+
+training:
+  learning_rate: 0.001          # Learning rate for optimizer
+  batch_size: 32                # Batch size for training
+  epochs: 50                    # Number of epochs
+  validation_split: 0.2         # Validation split ratio
+
+data:
+  train_split: 0.7              # Train split ratio
+  val_split: 0.2                # Validation split ratio
+  test_split: 0.1               # Test split ratio
+
+preprocessing:
+  resize: [128, 128]            # Image resizing dimensions
+  normalize: true               # Normalize image pixel values
+  augmentations:
+    gaussian_noise: true        # Apply Gaussian noise
+    random_rotation: true       # Apply random rotation
+    random_brightness: true     # Adjust brightness randomly
